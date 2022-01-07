@@ -1,0 +1,15 @@
+127.0.0.1 - - [09/Nov/2021:08:50:32 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:50:34 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:51:03 +0100] "PUT /GestionMed/webapi/myresource/addCmd HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:53:55 +0100] "PUT /GestionMed/webapi/myresource/addCmd HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:55:23 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:56:36 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 404 636
+127.0.0.1 - - [09/Nov/2021:08:57:44 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:57:46 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:58:02 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:58:23 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:08:59:30 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:09:00:05 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:09:05:55 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:09:09:43 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790
+0:0:0:0:0:0:0:1 - - [09/Nov/2021:09:09:55 +0100] "POST /GestionMed/webapi/myresource/addCmd HTTP/1.1" 415 790

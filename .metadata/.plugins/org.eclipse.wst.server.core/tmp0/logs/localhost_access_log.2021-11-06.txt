@@ -1,0 +1,14 @@
+127.0.0.1 - - [06/Nov/2021:10:18:08 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:18:09 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:18:29 +0100] "GET /GestionMed/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:19:58 +0100] "GET /GestionMed/webapi/myresource/findAllMedi HTTP/1.1" 500 719
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:23:30 +0100] "POST /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/3000 HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:23:49 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/3000 HTTP/1.1" 405 703
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:24:21 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/3000 HTTP/1.1" 405 703
+127.0.0.1 - - [06/Nov/2021:10:25:02 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:25:16 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/3000 HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:25:26 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/3000 HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:25:33 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/30 HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:25:41 +0100] "POST /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/30 HTTP/1.1" 405 703
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:10:25:56 +0100] "PUT /GestionMed/webapi/myresource/saveMedi/anti/doli/02-02-2020/5/30 HTTP/1.1" 404 636
+0:0:0:0:0:0:0:1 - - [06/Nov/2021:12:45:42 +0100] "GET /GestionMed/webapi/myresource/findById/2020 HTTP/1.1" 500 719

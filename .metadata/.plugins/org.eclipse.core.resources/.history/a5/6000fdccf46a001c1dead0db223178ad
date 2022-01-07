@@ -1,0 +1,159 @@
+package com.IsiProject.GestionMed;
+import metiers.*;
+
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import DAO.CommandeDAO;
+import DAO.LigneCmdDAO;
+import DAO.MedicamentDAO;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
+
+/**
+ * Root resource (exposed at "myresource" path)
+ */
+@Path("myresource")
+public class MyResource {
+
+    /**
+     * Method handling HTTP GET requests. The returned object will be sent
+     * to the client as "text/plain" media type.
+     *
+     * @return String that will be returned as a text/plain response.
+     */
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getIt() {
+        return "Got it!";
+    }
+    
+    ///////////////////Medicament//////////////////////
+    //cv
+    @GET
+    @Path("findAllMedi")
+    @Produces("application/json")
+    public ArrayList<Medicament> findAll() {
+        MedicamentDAO med=new MedicamentDAO();
+        return(med.findAll());
+    }
+    
+    //cv
+    @DELETE
+    @Path("deleteMedi/{id}")
+    public void delete(@PathParam("id") String idMed) {
+    	MedicamentDAO medi=new MedicamentDAO();
+    	medi.delete(idMed);
+    }
+    //cv
+    @PUT
+    @Path("saveMedi/{id}/{qte}/{pxvente}")
+    public void save (@PathParam("id") String id
+    		,@PathParam("qte") int Qte,
+    		@PathParam("pxvente") Double Prixvente ) {
+    	MedicamentDAO medi=new MedicamentDAO();
+    	medi.update(id, Qte, Prixvente);
+    }
+    //cv
+    @POST
+    @Path("addMedi/{id}/{type}/{nom}/{date}/{qte}/{pxvente}")
+    public void addMedi (@PathParam("id") String idMed,@PathParam("type") String Type,@PathParam("nom") String Nom ,
+    		@PathParam("date") String DateExpiration,@PathParam("qte") int Qte,
+    		@PathParam("pxvente") Double Prixvente ) {
+    	MedicamentDAO medi=new MedicamentDAO();
+    	medi.addMedicament(new Medicament(idMed,Type, Nom, DateExpiration, Qte, Prixvente));
+    }
+    //cv
+    @GET
+    @Path("findByNom")
+    @Produces("application/json")
+    public ArrayList<Medicament> findByNom(@QueryParam("nomMedi") String nom){
+    	MedicamentDAO md=new MedicamentDAO();
+    	return(md.findByNom(nom));
+    }
+    
+  //cv
+    @GET
+    @Path("findByType/{type}")
+    public ArrayList<Medicament> findByType(@PathParam("type") String type){
+    	MedicamentDAO md=new MedicamentDAO();
+    	return(md.findByType(type));
+    }
+  //cv
+    @GET
+    @Path("findByIdMed/{idMedi}")
+    public ArrayList<Medicament> findByIdMed(@PathParam("idMedi") String id){
+    	MedicamentDAO md=new MedicamentDAO();
+    	return(md.findByIdMed(id));
+    }
+    
+    
+    
+    
+    
+    //////////////////////////commande//////////////////
+    //cv
+    @GET
+    @Path("findById/{idClient}")
+    public ArrayList<Commande> findByIdClient(@PathParam("idClient") String IdClient){
+    	CommandeDAO cmd=new CommandeDAO();
+    	return(cmd.findByIdClient(IdClient));
+    }
+   //cv
+   @POST
+  /* @Path("addCmd")
+	public void AddCommande(@RequestBody Commande c1) {*/
+   @Path("addCmd/{numcmd}/{idClient}/{datecmd}/{prix}")
+  	public void AddCommande(@PathParam("numcmd") int numCmd, @PathParam("idClient") String idClient, 
+  			@PathParam("datecmd") String dateCmd,@PathParam("prix") double prixTot) {
+    	Commande c =new Commande(numCmd,idClient,dateCmd,prixTot);
+    	CommandeDAO cmd=new CommandeDAO();
+    	cmd.addCommande(c);
+    }
+
+    @DELETE
+    @Path("deleteCmd/{numCmd}")
+    public void deleteCmd(@PathParam("numCmd") int NumCmd) {
+    	CommandeDAO cmd=new CommandeDAO();
+    	cmd.deleteCmd(NumCmd);
+    }
+    
+    
+    //////////////ligneCommande//////////////
+    //cv
+    @DELETE
+    @Path("deleteLigneCmd/{numCmd}/{idMed}")
+    public void deleteLigneCmd(@PathParam("numCmd") int NumCmd , @PathParam("idMed") String IdMedicament) {
+    	LigneCmdDAO lcmd=new LigneCmdDAO();
+    	lcmd.deleteLigneCmd(NumCmd,IdMedicament);
+    }
+    //cv
+    @POST
+    @Path("addLigneCmd/{numCmd}/{idMed}/{qte}/{px}")
+    public void addLigneCmd (@PathParam("numCmd") int numCmd, 
+    		@PathParam("idMed") String idMedicament, @PathParam("qte") int qte, 
+    		@PathParam("px") double prix ) {
+    	LigneCmdDAO medi=new LigneCmdDAO();
+    	medi.addLigneCommande(numCmd	,idMedicament, qte, prix);
+    }
+    
+    @PUT
+    @Path("updateLigneCmd/{qte}/{id}")
+    public void update (@PathParam("qte") int Qte, @PathParam("id") String id ) {
+    	LigneCmdDAO medi=new LigneCmdDAO();
+    	medi.updateLigneCmd(Qte,id);
+    }
+}

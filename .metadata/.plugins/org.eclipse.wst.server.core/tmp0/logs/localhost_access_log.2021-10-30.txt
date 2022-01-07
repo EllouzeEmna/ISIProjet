@@ -1,0 +1,15 @@
+127.0.0.1 - - [30/Oct/2021:12:05:11 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:05:14 +0100] "GET /emna/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:05:22 +0100] "GET /emna/myresource HTTP/1.1" 404 701
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:05:39 +0100] "GET /emna/webapi/myresource HTTP/1.1" 200 7
+127.0.0.1 - - [30/Oct/2021:12:37:08 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:37:09 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:37:19 +0100] "GET /GestionMed/webapi/myresource HTTP/1.1" 200 7
+127.0.0.1 - - [30/Oct/2021:12:46:44 +0100] "GET / HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:46:45 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:12:47:14 +0100] "GET /GestionMed/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:21:43:33 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:21:45:32 +0100] "GET /GestionMed/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:21:52:07 +0100] "GET /GestionMed/ HTTP/1.1" 200 247
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:21:53:13 +0100] "GET /GestionMed/webapi/myresource HTTP/1.1" 200 7
+0:0:0:0:0:0:0:1 - - [30/Oct/2021:22:04:58 +0100] "GET /GestionMed/webapi/myresource/findAll HTTP/1.1" 500 4413

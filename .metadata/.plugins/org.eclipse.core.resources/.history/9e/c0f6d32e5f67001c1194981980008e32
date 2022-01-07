@@ -1,0 +1,59 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import metiers.LigneCmd;
+
+public class LigneCmdDAO {
+
+	public void deleteLigneCmd(int numCmd ,String IdMedicament) {
+		Connection cnx= Connexion.getInstance();
+		String rq3= "delete from lignecommande where NumCmd=? and IdMedicament=?";
+		PreparedStatement st;
+		int n=0;
+		try {
+		st = cnx.prepareStatement(rq3);
+		st.setInt(1, numCmd);
+		st.setString(2, IdMedicament);
+		n= st.executeUpdate();
+		st.close();
+		   System.out.println("La suppression du ligne commande est effectue avec succe!");
+		} catch (SQLException e) {
+		System.out.println("Exception dans la suppression d'une ligne commande !!");
+		}
+		}
+
+		public void addLigneCommande(LigneCmd lc) {
+		if(lc==null)
+		return;
+		Connection cnx= Connexion.getInstance();
+		String rq1 = "insert into lignecmd (NumCmd,IdMedicament,Qte,Prix) values (?,?,?,?)";
+		try {
+		PreparedStatement stm2 = cnx.prepareStatement(rq1);
+		stm2.setInt(1,lc.getNumCmd());
+		stm2.setString(2,lc.getIdMedicament());
+		stm2.setInt(3,lc.getQte());
+		stm2.setDouble(4,lc.getPrix());
+		int n=stm2.executeUpdate();
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		}
+
+		public void updateLigneCmd (LigneCmd lc) {
+		String rq= "update lignecmd set Qte=? where IdMedicament=?";
+		Connection cnx= Connexion.getInstance();
+		PreparedStatement st= null;
+		int n=0;
+		try {
+		st = cnx.prepareStatement(rq);
+		st.setInt(1, lc.getQte());
+		n= st.executeUpdate();
+		st.close();
+		} catch (SQLException e) {
+		System.out.println("Exception dans modification d'une ligne de commande ");
+		}
+		}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="metiers.LigneCmd"/>
+    <fullyQualifiedTypeName name="metiers.Commande"/>
+    <fullyQualifiedTypeName name="metiers.Medicament"/>
+    <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="DAO.MedicamentDAO"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.PathParam"/>
+    <fullyQualifiedTypeName name="DAO.CommandeDAO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="DAO.LigneCmdDAO"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.QueryParam"/>
+</qualifiedTypeNameHistroy>
